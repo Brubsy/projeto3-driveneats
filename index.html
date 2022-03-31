@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Righteous font-family-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+     <!--Roboto font-family-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>DrivenEats</title>
+</head>
+<body>
+    <div class="top">
+        <h1>DrivenEats</h1>
+        <h2>Sua comida em 6 minutos</h2>
+    </div>
+    <div class="menu">
+        <div class="dish">
+            <h3>Primeiro, seu prato</h3>
+
+            <div class="options">
+                <div id="chicken" onclick="chooseChicken()">
+                    <img src="images/frango_yin_yang 1.png">
+                    <h4>Frango Yin Yang</h4>
+                    <h5>Um pouco de batata, um pouco de salada</h5>
+                    <p>R$ 14,90</p>
+                    <img src="images/Vector.png" class="check">
+                </div>
+
+                <div id="ratatouille" onclick="chooseRatatouille()">
+                    <img src="images/Ratatouille.JPG">
+                    <h4>Ratatouille</h4>
+                    <h5>Especialidade da casa feito pelo Remy</h5>
+                    <p>R$ 34,90</p>
+                    <img src="images/Vector.png" class="check">
+                </div>
+
+                <div id="lamen" onclick="chooseLamen()">
+                    <img src="images/Lamen.JPG">
+                    <h4>Lámen vegetariano</h4>
+                    <h5>Diretamente do Studio Ghibli</h5>
+                    <p>R$ 24,90</p>
+                    <img src="images/Vector.png" class="check">
+                </div>
+            </div>
+        </div>
+        <div class="drink">
+            <h3>Agora, sua bebida</h3>
+
+            <div class="options">
+                <div id="coke">
+                    <img src="images/coquinha_gelada 1.png">
+                    <h4>Coquinha gelada</h4>
+                    <h5>Lata 350ml</h5>
+                    <p>R$ 4,90</p>
+                    <img src="images/Vector.png" class="check">
+                </div>
+
+                <div id="juice">
+                    <img src="images/juice.jpg">
+                    <h4>Suco</h4>
+                    <h5>Escolha entre laranja, limão e acerola</h5>
+                    <p>R$ 7,90</p>
+                    <img src="images/Vector.png" class="check">
+                </div>
+
+                <div id="mupy">
+                    <img src="images/mupy.jfif">
+                    <h4>Mupy</h4>
+                    <h5>O elixir da vida de todo otaku</h5>
+                    <p>R$ 5,90</p>
+                    <img src="images/Vector.png" class="check">
+                </div>
+            </div>
+        </div>
+        <div class="dessert">
+            <h3>Por fim, sua sobremesa</h3>
+
+            <div class="options">
+                <div id="icecream">
+                    <img src="images/Sorvete.jpg">
+                    <h4>Sorvete</h4>
+                    <h5>Torça para que não derreta na viagem</h5>
+                    <p>R$ 4,90</p>
+                    <img src="images/Vector.png" class="check">
+                </div>
+
+                <div id="manjar">
+                    <img src="images/manjar-turco.jpg">
+                    <h4>Manjar Turco</h4>
+                    <h5>Entenda porque o Edmundo foi atrás da Feiticeira</h5>
+                    <p>R$ 10,90</p>
+                    <img src="images/Vector.png" class="check">
+                </div>
+
+                <div id="dango">
+                    <img src="images/dango.jpg">
+                    <h4>Dango</h4>
+                    <h5>A sobremesa favorita nos animes</h5>
+                    <p>R$ 8,90</p>
+                    <img src="images/Vector.png" class="check">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom">
+        <button><h6>Selecione os 3 itens para fechar o pedido</h6></button>
+    </div>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>
