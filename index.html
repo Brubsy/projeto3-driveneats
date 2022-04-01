@@ -30,7 +30,7 @@
             <h3>Primeiro, seu prato</h3>
 
             <div class="products dish">
-                <div class="product" onclick="chooseDish(this)">
+                <div class="product" onclick="chooseDish(this); activateButton()">
                     <img src="images/frango_yin_yang 1.png">
                     <h4>Frango Yin Yang</h4>
                     <h5>Um pouco de batata, um pouco de salada</h5>
@@ -38,15 +38,15 @@
                     <img src="images/Vector.png" class="check off">
                 </div>
 
-                <div class="product" onclick="chooseDish(this)">
+                <div class="product" onclick="chooseDish(this); activateButton()">
                     <img src="images/Ratatouille.JPG">
                     <h4>Ratatouille</h4>
-                    <h5>Especialidade da casa feito pelo Remy</h5>
+                    <h5>Especialidade da casa feita pelo Remy</h5>
                     <p>R$ 34,90</p>
                     <img src="images/Vector.png" class="check off">
                 </div>
 
-                <div class="product" onclick="chooseDish(this)">
+                <div class="product" onclick="chooseDish(this); activateButton()">
                     <img src="images/Lamen.JPG">
                     <h4>Lámen vegetariano</h4>
                     <h5>Diretamente do Studio Ghibli</h5>
@@ -59,7 +59,7 @@
             <h3>Agora, sua bebida</h3>
 
             <div class="products drink">
-                <div class="product" onclick="chooseDrink(this)">
+                <div class="product" onclick="chooseDrink(this); activateButton()">
                     <img src="images/coquinha_gelada 1.png">
                     <h4>Coquinha gelada</h4>
                     <h5>Lata 350ml</h5>
@@ -67,7 +67,7 @@
                     <img src="images/Vector.png" class="check off">
                 </div>
 
-                <div class="product" onclick="chooseDrink(this)">
+                <div class="product" onclick="chooseDrink(this); activateButton()">
                     <img src="images/juice.jpg">
                     <h4>Suco</h4>
                     <h5>Escolha entre laranja, limão e acerola</h5>
@@ -75,7 +75,7 @@
                     <img src="images/Vector.png" class="check off">
                 </div>
 
-                <div class="product" onclick="chooseDrink(this)">
+                <div class="product" onclick="chooseDrink(this); activateButton()">
                     <img src="images/mupy.jfif">
                     <h4>Mupy</h4>
                     <h5>O elixir da vida de todo otaku</h5>
@@ -88,7 +88,7 @@
             <h3>Por fim, sua sobremesa</h3>
 
             <div class="products dessert">
-                <div class="product" onclick="chooseDessert(this)">
+                <div class="product" onclick="chooseDessert(this); activateButton()">
                     <img src="images/Sorvete.jpg">
                     <h4>Sorvete</h4>
                     <h5>Torça para que não derreta na viagem</h5>
@@ -96,15 +96,15 @@
                     <img src="images/Vector.png" class="check off">
                 </div>
 
-                <div class="product" onclick="chooseDessert(this)">
+                <div class="product" onclick="chooseDessert(this); activateButton()">
                     <img src="images/manjar-turco.jpg">
                     <h4>Manjar Turco</h4>
-                    <h5>Entenda porque o Edmundo foi atrás da Feiticeira</h5>
+                    <h5>Entenda porque Edmundo foi atrás da Feiticeira</h5>
                     <p>R$ 10,90</p>
                     <img src="images/Vector.png"class="check off">
                 </div>
 
-                <div class="product" onclick="chooseDessert(this)">
+                <div class="product" onclick="chooseDessert(this); activateButton()">
                     <img src="images/dango.jpg">
                     <h4>Dango</h4>
                     <h5>A sobremesa favorita nos animes</h5>
@@ -116,7 +116,7 @@
     </div>
 
     <div class="bottom">
-        <button><h6>Selecione os 3 itens para fechar o pedido</h6></button>
+        <button class="inactive" onclick="orderFood()"><h6>Selecione os 3 itens para fechar o pedido</h6></button>
     </div>
 
     <script src="js/script.js"></script>

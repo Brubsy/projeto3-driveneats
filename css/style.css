@@ -159,9 +159,17 @@ p {
 button {
     width: 364px;
     height: 61px;
-    background: #CBCBCB;
     border-radius: 50px;
     border: none;
     box-sizing: border-box;
     padding: 0 70px;
+}
+
+.inactive {
+    background: #CBCBCB;
+}
+
+
+.active {
+    background: #32B72F;
 }
