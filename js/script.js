@@ -1,55 +1,50 @@
-let dish;
-let drink;
-let dessert;
-let dish_price;
-let drink_price;
-let dessert_price;
-      
-function chooseChicken() {
-    document.getElementById("chicken").style.borderColor = "#32B72F";
-    document.getElementById("ratatouille").style.borderColor = "white";
-    document.getElementById("lamen").style.borderColor = "white";
-    dish = "Frango Yin Yang";
-    dish_price = 14.90;
+function chooseDish(dish) {
+    let check = dish.querySelector("img:last-child");
+    let previousDish = document.querySelector(".dish .selected");
+    let previousCheck = document.querySelector(".dish .on");
+
+    if (previousDish !== null) {
+        previousDish.classList.remove("selected");
+        previousCheck.classList.add("off");
+        previousCheck.classList.remove("on");
+    }
+
+    dish.classList.add("selected");
+    check.classList.remove("off");
+    check.classList.add("on");
 
 }
 
-function chooseRatatouille() {
-    document.getElementById("chicken").style.borderColor = "white";
-    document.getElementById("ratatouille").style.borderColor = "#32B72F";
-    document.getElementById("lamen").style.borderColor = "white";
-    dish = "Ratatouille";
-    dish_price = 34.90;
+function chooseDrink(drink) {
+    let check = drink.querySelector("img:last-child");
+    let previousDrink = document.querySelector(".drink .selected");
+    let previousCheck = document.querySelector(".drink .on");
+
+    if (previousDrink !== null) {
+       previousDrink.classList.remove("selected");
+       previousCheck.classList.add("off");
+       previousCheck.classList.remove("on");
+
+    }
+
+    drink.classList.add("selected");
+    check.classList.remove("off");
+    check.classList.add("on");
 }
 
-function chooseLamen() {
-    document.getElementById("chicken").style.borderColor = "white";
-    document.getElementById("ratatouille").style.borderColor = "white";
-    document.getElementById("lamen").style.borderColor = "#32B72F";
-    dish = "Lámen Vegetariano";
-    dish_price = 24.90;
-}
+function chooseDessert(dessert) {
+    let check = dessert.querySelector("img:last-child");
+    let previousDessert = document.querySelector(".dessert .selected");
+    let previousCheck = document.querySelector(".dessert .on");
 
-function chooseCoke() {
-    document.getElementById("coke").style.borderColor = "#32B72F";
-    document.getElementById("juice").style.borderColor = "white";
-    document.getElementById("mupy").style.borderColor = "white";
-    dish = "Coca-cola";
-    dish_price = 34.90;
-}
+    if (previousDessert !== null) {
+        previousDessert.classList.remove("selected");
+        previousCheck.classList.add("off");
+        previousCheck.classList.remove("on");
 
-function chooseJuice() {
-    document.getElementById("coke").style.borderColor = "#32B72F";
-    document.getElementById("juice").style.borderColor = "white";
-    document.getElementById("mupy").style.borderColor = "white";
-    dish = "Ratatouille";
-    dish_price = 34.90;
-}
+    }
 
-function chooseMupy() {
-    document.getElementById("coke").style.borderColor = "#32B72F";
-    document.getElementById("juice").style.borderColor = "white";
-    document.getElementById("mupy").style.borderColor = "white";
-    dish = "Ratatouille";
-    dish_price = 34.90;
+    dessert.classList.add("selected");
+    check.classList.remove("off");
+    check.classList.add("on");
 }
