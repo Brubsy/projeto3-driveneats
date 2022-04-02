@@ -48,7 +48,7 @@ function chooseDrink(drink) {
     drinkSelected = drink.querySelector("h4").innerHTML;
     drinkPriceText = drink.querySelector("p").innerHTML;
     priceNumbers = drinkPriceText.substring(3,8);
-    drinkPrice = priceNumbers.replace(/,/, '.');
+    drinkPrice = priceNumbers.replace(',', '.');
 }
 
 function chooseDessert(dessert) {
@@ -91,17 +91,17 @@ function activateButton() {
 }
 
 //Order defintions
-let totalPrice;
 let name;
 let address;
+let totalPriceText;
 
 function orderFood() {
     name = prompt("Qual o seu nome?");
     address = prompt("Por favor, informe o seu endereço:");
 
     let sumPrice = Number(dishPrice) + Number(drinkPrice) + Number(dessertPrice);
-    totalPrice = sumPrice.toFixed(2);
-    let priceText = "R$: " + String(totalPrice);
+    sumPrice = sumPrice.toFixed(2);
+    totalPriceText = "R$ " + sumPrice.toString().replace('.', ',');
 
     document.querySelector(".order-choices span:first-child").innerText = dishSelected;
     document.querySelector(".order-choices span:nth-child(2)").innerText = drinkSelected;
@@ -110,7 +110,7 @@ function orderFood() {
     document.querySelector(".order-prices span:first-child").innerText = dishPriceText;
     document.querySelector(".order-prices span:nth-child(2)").innerText = drinkPriceText;
     document.querySelector(".order-prices span:nth-child(3)").innerText = dessertPriceText;
-    document.querySelector(".order-prices span:last-child").innerText = priceText;
+    document.querySelector(".order-prices span:last-child").innerText = totalPriceText;
 
     let changeDisplay = document.querySelector(".content");
     changeDisplay.style.display = "none";
@@ -120,7 +120,7 @@ function orderFood() {
 }
 
 function orderConfirmed() {
-    let message = `Olá, gostaria de fazer o pedido:` + '\n' + `-Prato: ${dishSelected}` + '\n' + `-Bebida: ${drinkSelected}` + '\n' + `-Sobremesa: ${dessertSelected}` + '\n' + `Total: R$ ${totalPrice} \n\n Nome: ${name} \n Endereço: ${address}`;
+    let message = `Olá, gostaria de fazer o pedido:` + '\n' + `-Prato: ${dishSelected}` + '\n' + `-Bebida: ${drinkSelected}` + '\n' + `-Sobremesa: ${dessertSelected}` + '\n' + `Total: ${totalPriceText} \n\n Nome: ${name} \n Endereço: ${address}`;
     let whatsappMessage = window.encodeURIComponent(message);
     window.open("https://wa.me/5521996947704?text="+ whatsappMessage);
 }
