@@ -3,6 +3,12 @@ let dishSelected = null;
 let drinkSelected = null;
 let dessertSelected = null;
 
+let price;
+let priceNumbers;
+let dishPrice;
+let drinkPrice;
+let dessertPrice;
+
 function chooseDish(dish) {
     let check = dish.querySelector("img:last-child");
     let previousDish = document.querySelector(".dish .selected");
@@ -18,8 +24,10 @@ function chooseDish(dish) {
     check.classList.remove("off");
     check.classList.add("on");
 
-    dishSelected = !null;
-
+    dishSelected = dish.querySelector("h4").innerHTML;
+    dishPriceText = dish.querySelector("p").innerHTML;
+    priceNumbers = dishPriceText.substring(3,8);
+    dishPrice = priceNumbers.replace(/,/, '.');
 }
 
 function chooseDrink(drink) {
@@ -31,14 +39,16 @@ function chooseDrink(drink) {
        previousDrink.classList.remove("selected");
        previousCheck.classList.add("off");
        previousCheck.classList.remove("on");
-
     }
 
     drink.classList.add("selected");
     check.classList.remove("off");
     check.classList.add("on");
 
-    drinkSelected = !null;
+    drinkSelected = drink.querySelector("h4").innerHTML;
+    drinkPriceText = drink.querySelector("p").innerHTML;
+    priceNumbers = drinkPriceText.substring(3,8);
+    drinkPrice = priceNumbers.replace(/,/, '.');
 }
 
 function chooseDessert(dessert) {
@@ -50,14 +60,16 @@ function chooseDessert(dessert) {
         previousDessert.classList.remove("selected");
         previousCheck.classList.add("off");
         previousCheck.classList.remove("on");
-
     }
 
     dessert.classList.add("selected");
     check.classList.remove("off");
     check.classList.add("on");
 
-    dessertSelected = !null;
+    dessertSelected = dessert.querySelector("h4").innerHTML;
+    dessertPriceText = dessert.querySelector("p").innerHTML;
+    priceNumbers = dessertPriceText.substring(3,8);
+    dessertPrice = priceNumbers.replace(/,/, '.');
 }
 
 //Buttons properties and changes defintions
@@ -66,7 +78,7 @@ button.disabled = true;
 
 
 function activateButton() {
-    if (dishSelected === true && drinkSelected === true && dessertSelected === true) {
+    if (dishSelected !== null && drinkSelected !== null && dessertSelected !== null) {
 
         button.disabled = false;
         let text = document.querySelector("button h6");
@@ -78,8 +90,45 @@ function activateButton() {
     }
 }
 
+//Order defintions
+let totalPrice;
+let name;
+let address;
+
 function orderFood() {
-    let mensagem = `Olá, gostaria de fazer o pedido:` + '\r\n' + `-Prato: ` + '\r\n' + `-Bebida:` + '\r\n' + `-Sobremesa: ` + '\r\n' + `Total: R$.`;
-    console.log(mensagem);
-    window.open("https:google.com");
+    name = prompt("Qual o seu nome?");
+    address = prompt("Por favor, informe o seu endereço:");
+
+    let sumPrice = Number(dishPrice) + Number(drinkPrice) + Number(dessertPrice);
+    totalPrice = sumPrice.toFixed(2);
+    let priceText = "R$: " + String(totalPrice);
+
+    document.querySelector(".order-choices span:first-child").innerText = dishSelected;
+    document.querySelector(".order-choices span:nth-child(2)").innerText = drinkSelected;
+    document.querySelector(".order-choices span:nth-child(3)").innerText = dessertSelected;
+
+    document.querySelector(".order-prices span:first-child").innerText = dishPriceText;
+    document.querySelector(".order-prices span:nth-child(2)").innerText = drinkPriceText;
+    document.querySelector(".order-prices span:nth-child(3)").innerText = dessertPriceText;
+    document.querySelector(".order-prices span:last-child").innerText = priceText;
+
+    let changeDisplay = document.querySelector(".content");
+    changeDisplay.style.display = "none";
+
+    let confirmBox = document.querySelector(".confirm-box");
+    confirmBox.classList.remove("no-order");
+}
+
+function orderConfirmed() {
+    let message = `Olá, gostaria de fazer o pedido:` + '\n' + `-Prato: ${dishSelected}` + '\n' + `-Bebida: ${drinkSelected}` + '\n' + `-Sobremesa: ${dessertSelected}` + '\n' + `Total: R$ ${totalPrice} \n\n Nome: ${name} \n Endereço: ${address}`;
+    let whatsappMessage = window.encodeURIComponent(message);
+    window.open("https://wa.me/5521996947704?text="+ whatsappMessage);
+}
+
+function cancel() {
+    let changeDisplay = document.querySelector(".content");
+    changeDisplay.style.display = "initial";
+
+    let confirmBox = document.querySelector(".confirm-box");
+    confirmBox.classList.add("no-order");
 }
