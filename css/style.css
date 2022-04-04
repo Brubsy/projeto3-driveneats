@@ -1,7 +1,5 @@
-body {
+body, .content {
     font-family: 'Roboto', sans-serif;
-    width: 100%;
-    height: 100%;
     background: #E5E5E5;
 }
 
@@ -148,6 +146,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: none;
     z-index: 1;
 
     position: fixed;
